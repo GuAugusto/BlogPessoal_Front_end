@@ -1,8 +1,8 @@
 import { Postagem } from "./Postagem"
 
-export class Tema {
+export class Tema{
     public id: number
     public descricao: string
-    public postagem: Postagem[]
 
+    public postagem: Postagem[]
 }

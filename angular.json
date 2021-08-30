@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "blogpessoal": {
+    "blogPessoal": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/blogpessoal",
+            "outputPath": "dist/blogPessoal",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -34,7 +34,6 @@
               "./node_modules/jquery/dist/jquery.js",
               "./node_modules/popper.js/dist/umd/popper.min.js",
               "./node_modules/bootstrap/dist/js/bootstrap.js"
-
             ]
           },
           "configurations": {
@@ -74,10 +73,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "blogpessoal:build:production"
+              "browserTarget": "blogPessoal:build:production"
             },
             "development": {
-              "browserTarget": "blogpessoal:build:development"
+              "browserTarget": "blogPessoal:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -85,7 +84,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "blogpessoal:build"
+            "browserTarget": "blogPessoal:build"
           }
         },
         "test": {
@@ -108,5 +107,5 @@
       }
     }
   },
-  "defaultProject": "blogpessoal"
+  "defaultProject": "blogPessoal"
 }
