@@ -1,24 +1,9 @@
 #img-bg{
-    background-image: url('https://images.hdqwalls.com/download/alone-at-rooftop-pe-1280x1024.jpg');
-    min-height: 100vh;
+    background-image: url('https://i.imgur.com/d5bMdDJ.jpg');
+  
+    min-height: 1000px;
+  
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-.form-control{
-    border-radius: 10px;
-}
-
-button{
-    width: 100%;
-    margin-top: 15px;
-    border-radius: 20px;
-}
-
-.quadro{
-    border: 1px solid rgb(212, 212, 212);
-    border-radius: 25px;
-    padding: 40px;
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-}
+  }
