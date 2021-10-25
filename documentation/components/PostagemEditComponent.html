@@ -395,6 +395,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -711,10 +712,10 @@ export class PostagemEditComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container mt-5 mb-5&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container mt-5&quot;&gt;
 
     &lt;div class&#x3D;&quot;row&quot;&gt;
-        &lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+        &lt;div class&#x3D;&quot;col-md-12 marginT&quot;&gt;
             &lt;h1 class&#x3D;&quot;text-center text-dark mb-5&quot;&gt;Atualizar Postagem&lt;/h1&gt;
         &lt;/div&gt;
     &lt;/div&gt;
@@ -722,7 +723,7 @@ export class PostagemEditComponent implements OnInit {
 
     &lt;div class&#x3D;&quot;row d-flex justify-content-center&quot;&gt;
 
-        &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
+        &lt;div class&#x3D;&quot;col-md-6 marginB&quot;&gt;
 
             &lt;div class&#x3D;&quot;form-group&quot;&gt;
                 &lt;label for&#x3D;&quot;titulo&quot;&gt;Título&lt;/label&gt;
@@ -736,7 +737,8 @@ export class PostagemEditComponent implements OnInit {
             &lt;/div&gt;
 
             &lt;div class&#x3D;&quot;form-group&quot;&gt;
-                &lt;label for&#x3D;&quot;texto&quot;&gt;Escolha um tema ou &lt;a data-dismiss&#x3D;&quot;modal&quot; routerLink&#x3D;&#x27;/tema&#x27;&gt;cadastre um novo&lt;/a&gt;:&lt;/label&gt;
+                &lt;label for&#x3D;&quot;texto&quot;&gt;Escolha um tema ou &lt;a data-dismiss&#x3D;&quot;modal&quot; routerLink&#x3D;&#x27;/tema&#x27;&gt;cadastre um
+                        novo&lt;/a&gt;:&lt;/label&gt;
                 &lt;select name&#x3D;&quot;tema&quot; id&#x3D;&quot;tema&quot; class&#x3D;&quot;form-control&quot; [(ngModel)]&#x3D;&#x27;idTema&#x27; (change)&#x3D;&#x27;findByIdTema()&#x27;&gt;
                     &lt;option *ngFor&#x3D;&#x27;let item of listaTemas&#x27; value&#x3D;&quot;{{item.id}}&quot;&gt;{{item.descricao}}&lt;/option&gt;
                 &lt;/select&gt;
@@ -758,7 +760,13 @@ export class PostagemEditComponent implements OnInit {
                 <p class="comment">
                     <code>./postagem-edit.component.css</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
+                <pre class="line-numbers"><code class="language-scss">.marginT{
+    margin-top: 60px;
+}
+
+.marginB{
+    margin-bottom: 100px;
+}</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -786,7 +794,7 @@ export class PostagemEditComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container mt-5 mb-5">    <div class="row">        <div class="col-md-12">            <h1 class="text-center text-dark mb-5">Atualizar Postagem</h1>        </div>    </div>    <div class="row d-flex justify-content-center">        <div class="col-md-6">            <div class="form-group">                <label for="titulo">Título</label>                <input [(ngModel)]=\'postagem.titulo\' type="text" class="form-control" id="titulo"                    placeholder="Informe o título">            </div>            <div class="form-group">                <label for="texto">Texto</label>                <textarea [(ngModel)]=\'postagem.texto\' class="form-control" name="texto" id="texto" rows="3"></textarea>            </div>            <div class="form-group">                <label for="texto">Escolha um tema ou <a data-dismiss="modal" routerLink=\'/tema\'>cadastre um novo</a>:</label>                <select name="tema" id="tema" class="form-control" [(ngModel)]=\'idTema\' (change)=\'findByIdTema()\'>                    <option *ngFor=\'let item of listaTemas\' value="{{item.id}}">{{item.descricao}}</option>                </select>            </div>            <div class="d-flex justify-content-center mb-5">                <button class="btn btn-outline-danger mr-4" routerLink=\'/inicio\'>Cancelar</button>                <button class="btn btn-outline-success" (click)=\'atualizar()\'>Atualizar</button>            </div>        </div>    </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="container mt-5">    <div class="row">        <div class="col-md-12 marginT">            <h1 class="text-center text-dark mb-5">Atualizar Postagem</h1>        </div>    </div>    <div class="row d-flex justify-content-center">        <div class="col-md-6 marginB">            <div class="form-group">                <label for="titulo">Título</label>                <input [(ngModel)]=\'postagem.titulo\' type="text" class="form-control" id="titulo"                    placeholder="Informe o título">            </div>            <div class="form-group">                <label for="texto">Texto</label>                <textarea [(ngModel)]=\'postagem.texto\' class="form-control" name="texto" id="texto" rows="3"></textarea>            </div>            <div class="form-group">                <label for="texto">Escolha um tema ou <a data-dismiss="modal" routerLink=\'/tema\'>cadastre um                        novo</a>:</label>                <select name="tema" id="tema" class="form-control" [(ngModel)]=\'idTema\' (change)=\'findByIdTema()\'>                    <option *ngFor=\'let item of listaTemas\' value="{{item.id}}">{{item.descricao}}</option>                </select>            </div>            <div class="d-flex justify-content-center mb-5">                <button class="btn btn-outline-danger mr-4" routerLink=\'/inicio\'>Cancelar</button>                <button class="btn btn-outline-success" (click)=\'atualizar()\'>Atualizar</button>            </div>        </div>    </div></div></div>'
     var COMPONENTS = [{'name': 'AlertasComponent', 'selector': 'app-alertas'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CadastrarComponent', 'selector': 'app-cadastrar'},{'name': 'EntrarComponent', 'selector': 'app-entrar'},{'name': 'InicioComponent', 'selector': 'app-inicio'},{'name': 'MenuComponent', 'selector': 'app-menu'},{'name': 'PostagemDeleteComponent', 'selector': 'app-postagem-delete'},{'name': 'PostagemEditComponent', 'selector': 'app-postagem-edit'},{'name': 'RodapeComponent', 'selector': 'app-rodape'},{'name': 'TemaComponent', 'selector': 'app-tema'},{'name': 'TemaDeleteComponent', 'selector': 'app-tema-delete'},{'name': 'TemaEditComponent', 'selector': 'app-tema-edit'},{'name': 'UserEditComponent', 'selector': 'app-user-edit'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'PostagemEditComponent'};
@@ -802,14 +810,14 @@ export class PostagemEditComponent implements OnInit {
 
 
 
-                   
+
 
 
 
 
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -830,8 +838,8 @@ export class PostagemEditComponent implements OnInit {
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       
-       <script type="module" src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/menu-wc.js" defer></script>
        <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>

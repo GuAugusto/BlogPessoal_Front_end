@@ -1048,12 +1048,14 @@ export class InicioComponent implements OnInit {
     }
   }
 
+
+
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container-fluid&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container-fluid&quot; id&#x3D;&quot;font&quot;&gt;
 
   &lt;div class&#x3D;&quot;row fundo-bg align-items-center&quot;&gt;
 
@@ -1077,14 +1079,13 @@ export class InicioComponent implements OnInit {
     &lt;/div&gt;
 
     &lt;div class&#x3D;&quot;col-md-6 d-flex justify-content-center&quot;&gt;
-      &lt;img src&#x3D;&quot;https://i.imgur.com/akwPzYj.png&quot; alt&#x3D;&quot;Imagem ilustrativa de pessoas em rede social&quot; width&#x3D;&quot;500px&quot;
-        height&#x3D;&quot;500px&quot;&gt;
-    &lt;/div&gt;
+      
 
   &lt;/div&gt;
 
 &lt;/div&gt;
 
+&lt;!-- OPÇÕES DE POSTAGENS --&gt;
 &lt;div class&#x3D;&quot;container mb-5 mt-5&quot; id&#x3D;&quot;postagens&quot;&gt;
 
   &lt;nav&gt;
@@ -1106,19 +1107,21 @@ export class InicioComponent implements OnInit {
 
     &lt;div class&#x3D;&quot;tab-pane fade show active&quot; id&#x3D;&quot;todasPostagens&quot; role&#x3D;&quot;tabpanel&quot; aria-labelledby&#x3D;&quot;nav-todasPostagens-tab&quot;&gt;
 
+      &lt;!-- PESQUISA DE POSTAGEM POR TITULO --&gt;
       &lt;div class&#x3D;&quot;row d-flex justify-content-center mt-5 mb-5&quot;&gt;
         &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
           &lt;div class&#x3D;&quot;form-group&quot;&gt;
-            &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;titulo&quot; placeholder&#x3D;&quot;Pesquise postagens por titulo&quot; [(ngModel)]&#x3D;&#x27;tituloPost&#x27; (keyup)&#x3D;&#x27;findByTituloPostagem()&#x27;&gt;
+            &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;titulo&quot; placeholder&#x3D;&quot;Pesquise postagens por titulo&quot;
+              [(ngModel)]&#x3D;&#x27;tituloPost&#x27; (keyup)&#x3D;&#x27;findByTituloPostagem()&#x27;&gt;
           &lt;/div&gt;
         &lt;/div&gt;
       &lt;/div&gt;
 
 
+      &lt;!-- CARDS DAS POSTAGENS --&gt;
       &lt;div class&#x3D;&quot;card-columns&quot;&gt;
         &lt;div class&#x3D;&quot;card text-center&quot; *ngFor&#x3D;&#x27;let item of listaPostagens | orderBy : key : reverse&#x27;&gt;
           &lt;div class&#x3D;&quot;card-body&quot;&gt;
-
             &lt;h5 class&#x3D;&quot;card-title m-0&quot;&gt;{{item.titulo}}&lt;/h5&gt;
             &lt;small class&#x3D;&quot;text-muted&quot;&gt;Tema: {{item.tema.descricao}}&lt;/small&gt;
             &lt;p class&#x3D;&quot;card-text mt-3&quot;&gt;{{item.texto}}&lt;/p&gt;
@@ -1141,15 +1144,15 @@ export class InicioComponent implements OnInit {
 
             &lt;h5 class&#x3D;&quot;card-title m-0&quot;&gt;{{item.titulo}}&lt;/h5&gt;
             &lt;small class&#x3D;&quot;text-muted&quot;&gt;Tema: {{item.tema.descricao}}&lt;/small&gt;
-            &lt;p class&#x3D;&quot;card-text mt-3&quot;&gt;{{item.texto}}&lt;/p&gt;
+            &lt;p class&#x3D;&quot;card-text  mt-3&quot;&gt;{{item.texto}}&lt;/p&gt;
             &lt;p class&#x3D;&quot;card-text&quot;&gt;
-              &lt;small class&#x3D;&quot;text-muted&quot;&gt;
+              &lt;small class&#x3D;&quot;text-muted text-left&quot;&gt;
                 {{item.data | date: &#x27;dd/MM/yyyy&#x27;}} às {{item.data | date: &#x27;HH:mm&#x27;}}
               &lt;/small&gt;
             &lt;/p&gt;
 
             &lt;a [routerLink]&#x3D;&quot;[&#x27;/postagem-edit&#x27;, item.id]&quot; class&#x3D;&quot;text-primary mr-3&quot; href&#x3D;&quot;&quot;&gt;Editar&lt;/a&gt;
-            &lt;a [routerLink]&#x3D;&quot;[&#x27;/postagem-delete&#x27;, item.id]&quot; class&#x3D;&quot;text-danger mr-3&quot; href&#x3D;&quot;&quot;&gt;Apagar&lt;/a&gt;
+            &lt;a [routerLink]&#x3D;&quot;[&#x27;/postagem-delete&#x27;, item.id]&quot; class&#x3D;&quot;text-danger&quot; href&#x3D;&quot;&quot;&gt;Apagar&lt;/a&gt;
 
           &lt;/div&gt;
         &lt;/div&gt;
@@ -1158,13 +1161,6 @@ export class InicioComponent implements OnInit {
 
     &lt;div class&#x3D;&quot;tab-pane fade&quot; id&#x3D;&quot;postagemTema&quot; role&#x3D;&quot;tabpanel&quot; aria-labelledby&#x3D;&quot;nav-postagemTema-tab&quot;&gt;
 
-      &lt;div class&#x3D;&quot;row d-flex justify-content-center mt-5 mb-5&quot;&gt;
-        &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
-          &lt;div class&#x3D;&quot;form-group&quot;&gt;
-            &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;titulo&quot; placeholder&#x3D;&quot;Pesquise postagens por tema&quot; [(ngModel)]&#x3D;&#x27;nomeTema&#x27; (keyup)&#x3D;&#x27;findByNomeTema()&#x27;&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
 
       &lt;div class&#x3D;&quot;card-columns&quot; *ngFor&#x3D;&#x27;let tema of listaTemas | orderBy : key : reverse&#x27;&gt;
         &lt;div class&#x3D;&quot;card text-center&quot; *ngFor&#x3D;&#x27;let item of tema.postagem&#x27;&gt;
@@ -1186,7 +1182,7 @@ export class InicioComponent implements OnInit {
 
 &lt;/div&gt;
 
-&lt;!-- MODAL --&gt;
+&lt;!-- MODAL PARA POSTAGEM --&gt;
 &lt;div class&#x3D;&quot;modal fade&quot; id&#x3D;&quot;novaPostagem&quot; tabindex&#x3D;&quot;-1&quot; role&#x3D;&quot;dialog&quot; aria-labelledby&#x3D;&quot;TituloModalCentralizado&quot;
   aria-hidden&#x3D;&quot;true&quot;&gt;
   &lt;div class&#x3D;&quot;modal-dialog modal-dialog-centered&quot; role&#x3D;&quot;document&quot;&gt;
@@ -1198,7 +1194,7 @@ export class InicioComponent implements OnInit {
         &lt;/button&gt;
       &lt;/div&gt;
       &lt;div class&#x3D;&quot;modal-body&quot;&gt;
-        
+
         &lt;div class&#x3D;&quot;form-group&quot;&gt;
           &lt;label for&#x3D;&quot;titulo&quot;&gt;Título&lt;/label&gt;
           &lt;input [(ngModel)]&#x3D;&#x27;postagem.titulo&#x27; type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;titulo&quot;
@@ -1232,21 +1228,36 @@ export class InicioComponent implements OnInit {
                 <p class="comment">
                     <code>./inicio.component.css</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss">.fs-54{
+                <pre class="line-numbers"><code class="language-scss">@import url(&#x27;https://fonts.googleapis.com/css2?family&#x3D;Ubuntu:ital,wght@0,500;0,700;1,400;1,500;1,700&amp;family&#x3D;Zen+Kurenaido&amp;display&#x3D;swap&#x27;);
+
+.fs-54{
     font-size: 54pt;
+    font-family: &#x27;Zen Kurenaido&#x27;, sans-serif;
 }
 
 .fs-18{
     font-size: 18pt;
+    font-family: &#x27;Zen Kurenaido&#x27;, sans-serif;
 }
 
 .fundo-bg{
     background-color: #f1f1f1;
+    font-family: &#x27;Zen Kurenaido&#x27;, sans-serif;
 }
 
-.form-control:focus{
-    border-color: rgb(218, 142, 29);
-    box-shadow: 0 0 5px rgb(218, 142, 29);
+.card-columns{
+    display:inline;
+    border-radius: 20%;
+    font-family: &#x27;Zen Kurenaido&#x27;, sans-serif;
+}
+
+.card{
+    border-radius: 30px;
+    padding: 0;
+    font-family: &#x27;Zen Kurenaido&#x27;, sans-serif;
+}
+.font{
+    font-family: &#x27;Zen Kurenaido&#x27;, sans-serif;
 }</code></pre>
     </div>
 
@@ -1275,7 +1286,7 @@ export class InicioComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container-fluid">  <div class="row fundo-bg align-items-center">    <div class="col-md-6">      <div class="row d-flex justify-content-center">        <div class="col-md-6 text-black">          <h1 class="fs-54">Seja bem vindo(a)!</h1>          <h5 class="fs-18">Fique a vontade para expressar aqui os seus pensamentos e opiniões.</h5>        </div>      </div>      <div class="row d-flex justify-content-center mt-3 mb-5">        <div class="col-md-6">          <button class="btn btn-warning mr-2" data-toggle="modal" data-target="#novaPostagem">            Nova Postagem</button>          <a class="btn btn-warning" href="#postagens">Ver Postagens</a>        </div>      </div>    </div>    <div class="col-md-6 d-flex justify-content-center">      <img src="https://i.imgur.com/akwPzYj.png" alt="Imagem ilustrativa de pessoas em rede social" width="500px"        height="500px">    </div>  </div></div><div class="container mb-5 mt-5" id="postagens">  <nav>    <div class="nav nav-tabs d-flex justify-content-center" id="nav-tab" role="tablist">      <a class="nav-item nav-link active text-dark font-weight-bold" id="nav-todasPostagens-tab" data-toggle="tab"        href="#todasPostagens" role="tab" aria-controls="nav-todasPostagens" aria-selected="true">Todas as Postagens</a>      <a (click)=\'findByIdUser()\' class="nav-item nav-link text-dark font-weight-bold" id="nav-profile-tab"        data-toggle="tab" href="#minhasPostagens" role="tab" aria-controls="nav-minhasPostagens"        aria-selected="false">Minhas Postagens</a>      <a class="nav-item nav-link text-dark font-weight-bold" id="nav-postagemTema-tab" data-toggle="tab"        href="#postagemTema" role="tab" aria-controls="nav-postagemTema" aria-selected="false">Postagens por Tema</a>    </div>  </nav>  <div class="tab-content mt-5" id="nav-tabContent">    <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel" aria-labelledby="nav-todasPostagens-tab">      <div class="row d-flex justify-content-center mt-5 mb-5">        <div class="col-md-4">          <div class="form-group">            <input type="text" class="form-control" id="titulo" placeholder="Pesquise postagens por titulo" [(ngModel)]=\'tituloPost\' (keyup)=\'findByTituloPostagem()\'>          </div>        </div>      </div>      <div class="card-columns">        <div class="card text-center" *ngFor=\'let item of listaPostagens | orderBy : key : reverse\'>          <div class="card-body">            <h5 class="card-title m-0">{{item.titulo}}</h5>            <small class="text-muted">Tema: {{item.tema.descricao}}</small>            <p class="card-text mt-3">{{item.texto}}</p>            <p class="card-text"><small class="text-muted">                {{item.data | date: \'dd/MM/yyyy\'}} às {{item.data | date: \'HH:mm\'}}              </small></p>            <p class="card-text"><small class="text-muted">By: {{item.usuario.nome}}</small></p>          </div>        </div>      </div>    </div>    <div class="tab-pane fade" id="minhasPostagens" role="tabpanel" aria-labelledby="nav-minhasPostagens-tab">      <div class="card-columns">        <div class="card text-center" *ngFor=\'let item of user.postagem | orderBy : key : reverse\'>          <div class="card-body">            <h5 class="card-title m-0">{{item.titulo}}</h5>            <small class="text-muted">Tema: {{item.tema.descricao}}</small>            <p class="card-text mt-3">{{item.texto}}</p>            <p class="card-text">              <small class="text-muted">                {{item.data | date: \'dd/MM/yyyy\'}} às {{item.data | date: \'HH:mm\'}}              </small>            </p>            <a [routerLink]="[\'/postagem-edit\', item.id]" class="text-primary mr-3" href="">Editar</a>            <a [routerLink]="[\'/postagem-delete\', item.id]" class="text-danger mr-3" href="">Apagar</a>          </div>        </div>      </div>    </div>    <div class="tab-pane fade" id="postagemTema" role="tabpanel" aria-labelledby="nav-postagemTema-tab">      <div class="row d-flex justify-content-center mt-5 mb-5">        <div class="col-md-4">          <div class="form-group">            <input type="text" class="form-control" id="titulo" placeholder="Pesquise postagens por tema" [(ngModel)]=\'nomeTema\' (keyup)=\'findByNomeTema()\'>          </div>        </div>      </div>      <div class="card-columns" *ngFor=\'let tema of listaTemas | orderBy : key : reverse\'>        <div class="card text-center" *ngFor=\'let item of tema.postagem\'>          <div class="card-body">            <h5 class="card-title m-0">{{item.titulo}}</h5>            <p class="card-text mt-3">{{item.texto}}</p>            <p class="card-text"><small class="text-muted">                {{item.data | date: \'dd/MM/yyyy\'}} às {{item.data | date: \'HH:mm\'}}</small>            </p>            <p class="card-text"><small class="text-muted">By: {{item.usuario.nome}}</small></p>          </div>        </div>      </div>    </div>  </div></div><!-- MODAL --><div class="modal fade" id="novaPostagem" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"  aria-hidden="true">  <div class="modal-dialog modal-dialog-centered" role="document">    <div class="modal-content">      <div class="modal-header">        <h5 class="modal-title" id="TituloModalCentralizado">Nova Postagem</h5>        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">          <span aria-hidden="true">&times;</span>        </button>      </div>      <div class="modal-body">                <div class="form-group">          <label for="titulo">Título</label>          <input [(ngModel)]=\'postagem.titulo\' type="text" class="form-control" id="titulo"            placeholder="Informe o título">        </div>        <div class="form-group">          <label for="texto">Texto</label>          <textarea [(ngModel)]=\'postagem.texto\' class="form-control" name="texto" id="texto" rows="3"></textarea>        </div>        <div class="form-group">          <label for="texto">Escolha um tema ou <a data-dismiss="modal" routerLink=\'/tema\'>cadastre um novo</a>:</label>          <select name="tema" id="tema" class="form-control" [(ngModel)]=\'idTema\' (change)=\'findByIdTema()\'>            <option *ngFor=\'let item of listaTemas\' value="{{item.id}}">{{item.descricao}}</option>          </select>        </div>      </div>      <div class="modal-footer">        <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cancelar</button>        <button type="button" class="btn btn-outline-success" (click)=\'publicar()\'          data-dismiss="modal">Publicar</button>      </div>    </div>  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="container-fluid" id="font">  <div class="row fundo-bg align-items-center">    <div class="col-md-6">      <div class="row d-flex justify-content-center">        <div class="col-md-6 text-black">          <h1 class="fs-54">Seja bem vindo(a)!</h1>          <h5 class="fs-18">Fique a vontade para expressar aqui os seus pensamentos e opiniões.</h5>        </div>      </div>      <div class="row d-flex justify-content-center mt-3 mb-5">        <div class="col-md-6">          <button class="btn btn-warning mr-2" data-toggle="modal" data-target="#novaPostagem">            Nova Postagem</button>          <a class="btn btn-warning" href="#postagens">Ver Postagens</a>        </div>      </div>    </div>    <div class="col-md-6 d-flex justify-content-center">        </div></div><!-- OPÇÕES DE POSTAGENS --><div class="container mb-5 mt-5" id="postagens">  <nav>    <div class="nav nav-tabs d-flex justify-content-center" id="nav-tab" role="tablist">      <a class="nav-item nav-link active text-dark font-weight-bold" id="nav-todasPostagens-tab" data-toggle="tab"        href="#todasPostagens" role="tab" aria-controls="nav-todasPostagens" aria-selected="true">Todas as Postagens</a>      <a (click)=\'findByIdUser()\' class="nav-item nav-link text-dark font-weight-bold" id="nav-profile-tab"        data-toggle="tab" href="#minhasPostagens" role="tab" aria-controls="nav-minhasPostagens"        aria-selected="false">Minhas Postagens</a>      <a class="nav-item nav-link text-dark font-weight-bold" id="nav-postagemTema-tab" data-toggle="tab"        href="#postagemTema" role="tab" aria-controls="nav-postagemTema" aria-selected="false">Postagens por Tema</a>    </div>  </nav>  <div class="tab-content mt-5" id="nav-tabContent">    <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel" aria-labelledby="nav-todasPostagens-tab">      <!-- PESQUISA DE POSTAGEM POR TITULO -->      <div class="row d-flex justify-content-center mt-5 mb-5">        <div class="col-md-4">          <div class="form-group">            <input type="text" class="form-control" id="titulo" placeholder="Pesquise postagens por titulo"              [(ngModel)]=\'tituloPost\' (keyup)=\'findByTituloPostagem()\'>          </div>        </div>      </div>      <!-- CARDS DAS POSTAGENS -->      <div class="card-columns">        <div class="card text-center" *ngFor=\'let item of listaPostagens | orderBy : key : reverse\'>          <div class="card-body">            <h5 class="card-title m-0">{{item.titulo}}</h5>            <small class="text-muted">Tema: {{item.tema.descricao}}</small>            <p class="card-text mt-3">{{item.texto}}</p>            <p class="card-text"><small class="text-muted">                {{item.data | date: \'dd/MM/yyyy\'}} às {{item.data | date: \'HH:mm\'}}              </small></p>            <p class="card-text"><small class="text-muted">By: {{item.usuario.nome}}</small></p>          </div>        </div>      </div>    </div>    <div class="tab-pane fade" id="minhasPostagens" role="tabpanel" aria-labelledby="nav-minhasPostagens-tab">      <div class="card-columns">        <div class="card text-center" *ngFor=\'let item of user.postagem | orderBy : key : reverse\'>          <div class="card-body">            <h5 class="card-title m-0">{{item.titulo}}</h5>            <small class="text-muted">Tema: {{item.tema.descricao}}</small>            <p class="card-text  mt-3">{{item.texto}}</p>            <p class="card-text">              <small class="text-muted text-left">                {{item.data | date: \'dd/MM/yyyy\'}} às {{item.data | date: \'HH:mm\'}}              </small>            </p>            <a [routerLink]="[\'/postagem-edit\', item.id]" class="text-primary mr-3" href="">Editar</a>            <a [routerLink]="[\'/postagem-delete\', item.id]" class="text-danger" href="">Apagar</a>          </div>        </div>      </div>    </div>    <div class="tab-pane fade" id="postagemTema" role="tabpanel" aria-labelledby="nav-postagemTema-tab">      <div class="card-columns" *ngFor=\'let tema of listaTemas | orderBy : key : reverse\'>        <div class="card text-center" *ngFor=\'let item of tema.postagem\'>          <div class="card-body">            <h5 class="card-title m-0">{{item.titulo}}</h5>            <p class="card-text mt-3">{{item.texto}}</p>            <p class="card-text"><small class="text-muted">                {{item.data | date: \'dd/MM/yyyy\'}} às {{item.data | date: \'HH:mm\'}}</small>            </p>            <p class="card-text"><small class="text-muted">By: {{item.usuario.nome}}</small></p>          </div>        </div>      </div>    </div>  </div></div><!-- MODAL PARA POSTAGEM --><div class="modal fade" id="novaPostagem" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"  aria-hidden="true">  <div class="modal-dialog modal-dialog-centered" role="document">    <div class="modal-content">      <div class="modal-header">        <h5 class="modal-title" id="TituloModalCentralizado">Nova Postagem</h5>        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">          <span aria-hidden="true">&times;</span>        </button>      </div>      <div class="modal-body">        <div class="form-group">          <label for="titulo">Título</label>          <input [(ngModel)]=\'postagem.titulo\' type="text" class="form-control" id="titulo"            placeholder="Informe o título">        </div>        <div class="form-group">          <label for="texto">Texto</label>          <textarea [(ngModel)]=\'postagem.texto\' class="form-control" name="texto" id="texto" rows="3"></textarea>        </div>        <div class="form-group">          <label for="texto">Escolha um tema ou <a data-dismiss="modal" routerLink=\'/tema\'>cadastre um novo</a>:</label>          <select name="tema" id="tema" class="form-control" [(ngModel)]=\'idTema\' (change)=\'findByIdTema()\'>            <option *ngFor=\'let item of listaTemas\' value="{{item.id}}">{{item.descricao}}</option>          </select>        </div>      </div>      <div class="modal-footer">        <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cancelar</button>        <button type="button" class="btn btn-outline-success" (click)=\'publicar()\'          data-dismiss="modal">Publicar</button>      </div>    </div>  </div></div></div>'
     var COMPONENTS = [{'name': 'AlertasComponent', 'selector': 'app-alertas'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CadastrarComponent', 'selector': 'app-cadastrar'},{'name': 'EntrarComponent', 'selector': 'app-entrar'},{'name': 'InicioComponent', 'selector': 'app-inicio'},{'name': 'MenuComponent', 'selector': 'app-menu'},{'name': 'PostagemDeleteComponent', 'selector': 'app-postagem-delete'},{'name': 'PostagemEditComponent', 'selector': 'app-postagem-edit'},{'name': 'RodapeComponent', 'selector': 'app-rodape'},{'name': 'TemaComponent', 'selector': 'app-tema'},{'name': 'TemaDeleteComponent', 'selector': 'app-tema-delete'},{'name': 'TemaEditComponent', 'selector': 'app-tema-edit'},{'name': 'UserEditComponent', 'selector': 'app-user-edit'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'InicioComponent'};
@@ -1291,14 +1302,14 @@ export class InicioComponent implements OnInit {
 
 
 
-                   
+
 
 
 
 
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -1319,8 +1330,8 @@ export class InicioComponent implements OnInit {
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       
-       <script type="module" src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/menu-wc.js" defer></script>
        <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>

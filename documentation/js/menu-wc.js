@@ -1,6 +1,5 @@
 'use strict';
 
-
 customElements.define('compodoc-menu', class extends HTMLElement {
     constructor() {
         super();
@@ -55,13 +54,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/AppModule.html" data-type="entity-link" >AppModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-AppModule-b2e0ac55a2c16f9ec9faccc5a0a64669"' : 'data-target="#xs-components-links-module-AppModule-b2e0ac55a2c16f9ec9faccc5a0a64669"' }>
+                                            'data-target="#components-links-module-AppModule-63c18a809606ffc745617df0924e1464"' : 'data-target="#xs-components-links-module-AppModule-63c18a809606ffc745617df0924e1464"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AppModule-b2e0ac55a2c16f9ec9faccc5a0a64669"' :
-                                            'id="xs-components-links-module-AppModule-b2e0ac55a2c16f9ec9faccc5a0a64669"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AppModule-63c18a809606ffc745617df0924e1464"' :
+                                            'id="xs-components-links-module-AppModule-63c18a809606ffc745617df0924e1464"' }>
                                             <li class="link">
                                                 <a href="components/AlertasComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >AlertasComponent</a>
                                             </li>

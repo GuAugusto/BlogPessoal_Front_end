@@ -245,7 +245,7 @@ export class RodapeComponent implements OnInit {
 
         &lt;div class&#x3D;&quot;row&quot;&gt;
             &lt;div class&#x3D;&quot;col-md-12 d-flex justify-content-center&quot;&gt;
-                &lt;h4 class&#x3D;&quot;text-dark&quot;&gt;Siga-nos nas redes sociais&lt;/h4&gt;
+                &lt;h5 class&#x3D;&quot;text-dark&quot;&gt;Siga-me nas redes sociais&lt;/h5&gt;
             &lt;/div&gt;
         &lt;/div&gt;
    
@@ -255,18 +255,18 @@ export class RodapeComponent implements OnInit {
 
                 &lt;ul class&#x3D;&quot;social-network&quot;&gt;
                     &lt;li&gt;
-                        &lt;a href&#x3D;&quot;https://www.facebook.com/generationbrasil&quot; target&#x3D;&quot;_blank&quot; class&#x3D;&quot;icoFacebook&quot;&gt;&lt;/a&gt;
-                        &lt;i class&#x3D;&quot;fa fa-facebook-square&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;
+                        &lt;a href&#x3D;&quot;https://www.facebook.com/generationbrasil&quot; target&#x3D;&quot;_blank&quot; class&#x3D;&quot;icoFacebook&quot;&gt;
+                        &lt;i class&#x3D;&quot;fa fa-facebook-square&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;&lt;/a&gt;
                     &lt;/li&gt;
 
                     &lt;li&gt;
-                        &lt;a href&#x3D;&quot;https://www.instagram.com/paulolpss/&quot; target&#x3D;&quot;_blank&quot; class&#x3D;&quot;icoInstagram&quot;&gt;&lt;/a&gt;
-                        &lt;i class&#x3D;&quot;fa fa-instagram&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;
+                        &lt;a href&#x3D;&quot;https://www.instagram.com/_guaugust/&quot; target&#x3D;&quot;_blank&quot; class&#x3D;&quot;icoInstagram&quot;&gt;
+                        &lt;i class&#x3D;&quot;fa fa-instagram&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;&lt;/a&gt;
                     &lt;/li&gt;
 
                     &lt;li&gt;
-                        &lt;a href&#x3D;&quot;https://www.linkedin.com/in/paulolopessilva/&quot; target&#x3D;&quot;_blank&quot; class&#x3D;&quot;icoLinkedin&quot;&gt;&lt;/a&gt;
-                        &lt;i class&#x3D;&quot;fa fa-linkedin-square&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;
+                        &lt;a href&#x3D;&quot;https://www.linkedin.com/in/gustavo-augusto-/&quot; target&#x3D;&quot;_blank&quot; class&#x3D;&quot;icoLinkedin&quot;&gt;
+                        &lt;i class&#x3D;&quot;fa fa-linkedin-square&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;&lt;/a&gt;
                     &lt;/li&gt;
                 &lt;/ul&gt;
             &lt;/div&gt;
@@ -275,7 +275,7 @@ export class RodapeComponent implements OnInit {
 
     &lt;div class&#x3D;&quot;footer-copyright bg-footer text-center py-3&quot;&gt;
         &lt;span class&#x3D;&quot;text-light&quot;&gt;©️ 2021 Copyright: &lt;/span&gt;
-        &lt;a class&#x3D;&quot;text-light&quot; target&#x3D;&quot;_blank&quot; href&#x3D;&quot;https://www.linkedin.com/in/paulolopessilva/&quot;&gt;Paulo Lopes&lt;/a&gt;
+        &lt;a class&#x3D;&quot;text-light&quot; target&#x3D;&quot;_blank&quot; href&#x3D;&quot;https://www.linkedin.com/in/gustavo-augusto-/&quot;&gt;Gustavo Augusto&lt;/a&gt;
     &lt;/div&gt;
 &lt;/footer&gt;</code></pre>
     </div>
@@ -284,7 +284,9 @@ export class RodapeComponent implements OnInit {
                 <p class="comment">
                     <code>./rodape.component.css</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss">.fundo-bg{
+                <pre class="line-numbers"><code class="language-scss">@import url(&#x27;https://fonts.googleapis.com/css2?family&#x3D;Ubuntu:ital,wght@0,500;0,700;1,400;1,500;1,700&amp;family&#x3D;Zen+Kurenaido&amp;display&#x3D;swap&#x27;);
+
+.fundo-bg{
     background-color: #f1f1f1;
 }
 
@@ -350,7 +352,7 @@ ul.social-network li{
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><footer class="page-footer font-small fundo-bg pt-4">    <div class="container">        <div class="row">            <div class="col-md-12 d-flex justify-content-center">                <h4 class="text-dark">Siga-nos nas redes sociais</h4>            </div>        </div>           <div class="row">            <div class="col-md-12 d-flex justify-content-center">                 <ul class="social-network">                    <li>                        <a href="https://www.facebook.com/generationbrasil" target="_blank" class="icoFacebook"></a>                        <i class="fa fa-facebook-square" aria-hidden="true"></i>                    </li>                    <li>                        <a href="https://www.instagram.com/paulolpss/" target="_blank" class="icoInstagram"></a>                        <i class="fa fa-instagram" aria-hidden="true"></i>                    </li>                    <li>                        <a href="https://www.linkedin.com/in/paulolopessilva/" target="_blank" class="icoLinkedin"></a>                        <i class="fa fa-linkedin-square" aria-hidden="true"></i>                    </li>                </ul>            </div>        </div>    </div>    <div class="footer-copyright bg-footer text-center py-3">        <span class="text-light">©️ 2021 Copyright: </span>        <a class="text-light" target="_blank" href="https://www.linkedin.com/in/paulolopessilva/">Paulo Lopes</a>    </div></footer></div>'
+        var COMPONENT_TEMPLATE = '<div><footer class="page-footer font-small fundo-bg pt-4">    <div class="container">        <div class="row">            <div class="col-md-12 d-flex justify-content-center">                <h5 class="text-dark">Siga-me nas redes sociais</h5>            </div>        </div>           <div class="row">            <div class="col-md-12 d-flex justify-content-center">                 <ul class="social-network">                    <li>                        <a href="https://www.facebook.com/generationbrasil" target="_blank" class="icoFacebook">                        <i class="fa fa-facebook-square" aria-hidden="true"></i></a>                    </li>                    <li>                        <a href="https://www.instagram.com/_guaugust/" target="_blank" class="icoInstagram">                        <i class="fa fa-instagram" aria-hidden="true"></i></a>                    </li>                    <li>                        <a href="https://www.linkedin.com/in/gustavo-augusto-/" target="_blank" class="icoLinkedin">                        <i class="fa fa-linkedin-square" aria-hidden="true"></i></a>                    </li>                </ul>            </div>        </div>    </div>    <div class="footer-copyright bg-footer text-center py-3">        <span class="text-light">©️ 2021 Copyright: </span>        <a class="text-light" target="_blank" href="https://www.linkedin.com/in/gustavo-augusto-/">Gustavo Augusto</a>    </div></footer></div>'
     var COMPONENTS = [{'name': 'AlertasComponent', 'selector': 'app-alertas'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CadastrarComponent', 'selector': 'app-cadastrar'},{'name': 'EntrarComponent', 'selector': 'app-entrar'},{'name': 'InicioComponent', 'selector': 'app-inicio'},{'name': 'MenuComponent', 'selector': 'app-menu'},{'name': 'PostagemDeleteComponent', 'selector': 'app-postagem-delete'},{'name': 'PostagemEditComponent', 'selector': 'app-postagem-edit'},{'name': 'RodapeComponent', 'selector': 'app-rodape'},{'name': 'TemaComponent', 'selector': 'app-tema'},{'name': 'TemaDeleteComponent', 'selector': 'app-tema-delete'},{'name': 'TemaEditComponent', 'selector': 'app-tema-edit'},{'name': 'UserEditComponent', 'selector': 'app-user-edit'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'RodapeComponent'};
@@ -366,14 +368,14 @@ ul.social-network li{
 
 
 
-                   
+
 
 
 
 
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -394,8 +396,8 @@ ul.social-network li{
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       
-       <script type="module" src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/menu-wc.js" defer></script>
        <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>

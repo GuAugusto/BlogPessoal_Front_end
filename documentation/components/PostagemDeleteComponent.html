@@ -346,6 +346,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -550,7 +551,7 @@ export class PostagemDeleteComponent implements OnInit {
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container mb-5 mt-5&quot;&gt;
 
     &lt;div class&#x3D;&quot;row&quot;&gt;
-        &lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+        &lt;div class&#x3D;&quot;col-md-12 marginT&quot;&gt;
             &lt;h1 class&#x3D;&quot;text-center text-dark&quot;&gt;Apagar Postagem&lt;/h1&gt;
         &lt;/div&gt;
     &lt;/div&gt;
@@ -577,7 +578,7 @@ export class PostagemDeleteComponent implements OnInit {
     &lt;/div&gt;
 
     &lt;div class&#x3D;&quot;row mt-3&quot;&gt;
-        &lt;div class&#x3D;&quot;col-md-12 d-flex justify-content-center&quot;&gt;
+        &lt;div class&#x3D;&quot;col-md-12 marginB d-flex justify-content-center&quot;&gt;
             &lt;button class&#x3D;&quot;btn btn-outline-danger mr-4&quot; routerLink&#x3D;&#x27;/inicio&#x27;&gt;Não&lt;/button&gt;
             &lt;button class&#x3D;&quot;btn btn-outline-success&quot; (click)&#x3D;&#x27;apagar()&#x27;&gt;Sim&lt;/button&gt;
         &lt;/div&gt;
@@ -590,7 +591,13 @@ export class PostagemDeleteComponent implements OnInit {
                 <p class="comment">
                     <code>./postagem-delete.component.css</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
+                <pre class="line-numbers"><code class="language-scss">.marginT{
+    margin-top: 120px;
+}
+
+.marginB{
+    margin-bottom: 120px;
+}</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -618,7 +625,7 @@ export class PostagemDeleteComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container mb-5 mt-5">    <div class="row">        <div class="col-md-12">            <h1 class="text-center text-dark">Apagar Postagem</h1>        </div>    </div>    <div class="row">        <div class="col-md-12">            <h4 class="text-center text-dark">Você tem certeza que deseja apagar essa postagem?</h4>        </div>    </div>    <div class="row d-flex justify-content-center">        <div class="col-md-4">            <div class="card text-center mt-5">                <div class="card-body">                    <h5 class="card-title m-0">{{postagem.titulo}}</h5>                    <small class="text-muted">Tema: {{postagem.tema.descricao}}</small>                    <p class="card-text mt-3">{{postagem.texto}}</p>                    <p class="card-text mt-3"><small class="text-muted">                        {{postagem.data | date: \'dd/MM/yyyy\'}} às {{postagem.data | date:\'HH:mm\'}}                    </small></p>                </div>            </div>        </div>    </div>    <div class="row mt-3">        <div class="col-md-12 d-flex justify-content-center">            <button class="btn btn-outline-danger mr-4" routerLink=\'/inicio\'>Não</button>            <button class="btn btn-outline-success" (click)=\'apagar()\'>Sim</button>        </div>    </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="container mb-5 mt-5">    <div class="row">        <div class="col-md-12 marginT">            <h1 class="text-center text-dark">Apagar Postagem</h1>        </div>    </div>    <div class="row">        <div class="col-md-12">            <h4 class="text-center text-dark">Você tem certeza que deseja apagar essa postagem?</h4>        </div>    </div>    <div class="row d-flex justify-content-center">        <div class="col-md-4">            <div class="card text-center mt-5">                <div class="card-body">                    <h5 class="card-title m-0">{{postagem.titulo}}</h5>                    <small class="text-muted">Tema: {{postagem.tema.descricao}}</small>                    <p class="card-text mt-3">{{postagem.texto}}</p>                    <p class="card-text mt-3"><small class="text-muted">                        {{postagem.data | date: \'dd/MM/yyyy\'}} às {{postagem.data | date:\'HH:mm\'}}                    </small></p>                </div>            </div>        </div>    </div>    <div class="row mt-3">        <div class="col-md-12 marginB d-flex justify-content-center">            <button class="btn btn-outline-danger mr-4" routerLink=\'/inicio\'>Não</button>            <button class="btn btn-outline-success" (click)=\'apagar()\'>Sim</button>        </div>    </div></div></div>'
     var COMPONENTS = [{'name': 'AlertasComponent', 'selector': 'app-alertas'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CadastrarComponent', 'selector': 'app-cadastrar'},{'name': 'EntrarComponent', 'selector': 'app-entrar'},{'name': 'InicioComponent', 'selector': 'app-inicio'},{'name': 'MenuComponent', 'selector': 'app-menu'},{'name': 'PostagemDeleteComponent', 'selector': 'app-postagem-delete'},{'name': 'PostagemEditComponent', 'selector': 'app-postagem-edit'},{'name': 'RodapeComponent', 'selector': 'app-rodape'},{'name': 'TemaComponent', 'selector': 'app-tema'},{'name': 'TemaDeleteComponent', 'selector': 'app-tema-delete'},{'name': 'TemaEditComponent', 'selector': 'app-tema-edit'},{'name': 'UserEditComponent', 'selector': 'app-user-edit'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'PostagemDeleteComponent'};
@@ -634,14 +641,14 @@ export class PostagemDeleteComponent implements OnInit {
 
 
 
-                   
+
 
 
 
 
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -662,8 +669,8 @@ export class PostagemDeleteComponent implements OnInit {
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       
-       <script type="module" src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/menu-wc.js" defer></script>
        <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>

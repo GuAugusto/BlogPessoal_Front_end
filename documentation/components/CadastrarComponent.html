@@ -328,6 +328,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -433,6 +434,7 @@
 
                     <div class="io-description">
                         <b>Parameters :</b>
+                        
                         <table class="params">
                             <thead>
                                 <tr>
@@ -623,41 +625,40 @@ export class CadastrarComponent implements OnInit {
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container-fluid&quot;&gt;
 
-    &lt;div class&#x3D;&quot;row&quot;&gt;
+    &lt;div class&#x3D;&quot;row background&quot;&gt;
 
-        &lt;div class&#x3D;&quot;col-md-6 animacao&quot; id&#x3D;&quot;img-bg&quot;&gt;&lt;/div&gt;
-
-        &lt;div class&#x3D;&quot;col-md-6 mt-5 mb-5&quot;&gt;
+        &lt;div class&#x3D;&quot;col-md-6 mt-5 mb-4&quot;&gt;
 
             &lt;div class&#x3D;&quot;row d-flex justify-content-center&quot;&gt;
 
-                &lt;div class&#x3D;&quot;col-md-10 mt-5 quadro&quot;&gt;
+                &lt;div class&#x3D;&quot;col-md-9 quadro&quot;&gt;
 
-                    &lt;h1 class&#x3D;&quot;text-center mb-5&quot;&gt;Cadastro&lt;/h1&gt;
+                    &lt;h1 class&#x3D;&quot;text-center mb-4&quot;&gt;Cadastro&lt;/h1&gt;
 
                     &lt;div class&#x3D;&quot;form-group&quot;&gt;
                         &lt;label for&#x3D;&quot;nome&quot;&gt;Nome&lt;/label&gt;
-                        &lt;input [(ngModel)]&#x3D;&#x27;user.nome&#x27; class&#x3D;&quot;form-control&quot; type&#x3D;&quot;text&quot; name&#x3D;&quot;nome&quot; id&#x3D;&quot;nome&quot;&gt;
+                        &lt;input [(ngModel)]&#x3D;&#x27;user.nome&#x27; class&#x3D;&quot;form-control&quot; type&#x3D;&quot;text&quot; name&#x3D;&quot;nome&quot; id&#x3D;&quot;nome&quot; placeholder&#x3D;&quot;Nome&quot;&gt;
                     &lt;/div&gt;
 
                     &lt;div class&#x3D;&quot;form-group&quot;&gt;
-                        &lt;label for&#x3D;&quot;user&quot;&gt;Usuário&lt;/label&gt;
-                        &lt;input [(ngModel)]&#x3D;&#x27;user.usuario&#x27; class&#x3D;&quot;form-control&quot; type&#x3D;&quot;text&quot; name&#x3D;&quot;user&quot; id&#x3D;&quot;user&quot;&gt;
+                        &lt;label for&#x3D;&quot;user&quot;&gt;E-mail&lt;/label&gt;
+                        &lt;input [(ngModel)]&#x3D;&#x27;user.usuario&#x27; class&#x3D;&quot;form-control&quot; type&#x3D;&quot;text&quot; name&#x3D;&quot;user&quot; id&#x3D;&quot;user&quot; placeholder&#x3D;&quot;usuario@email.com&quot;&gt;
                     &lt;/div&gt;
 
                     &lt;div class&#x3D;&quot;form-group&quot;&gt;
                         &lt;label for&#x3D;&quot;foto&quot;&gt;Foto&lt;/label&gt;
-                        &lt;input [(ngModel)]&#x3D;&#x27;user.foto&#x27; class&#x3D;&quot;form-control&quot; type&#x3D;&quot;text&quot; name&#x3D;&quot;foto&quot; id&#x3D;&quot;foto&quot;&gt;
+                        &lt;input [(ngModel)]&#x3D;&#x27;user.foto&#x27; class&#x3D;&quot;form-control&quot; type&#x3D;&quot;text&quot; name&#x3D;&quot;foto&quot; id&#x3D;&quot;foto&quot; placeholder&#x3D;&quot;Link da foto&quot;&gt;
                     &lt;/div&gt;
 
                     &lt;div class&#x3D;&quot;form-group&quot;&gt;
                         &lt;label for&#x3D;&quot;senha&quot;&gt;Senha&lt;/label&gt;
-                        &lt;input (input)&#x3D;&#x27;confirmSenha($event)&#x27; class&#x3D;&quot;form-control&quot; type&#x3D;&quot;password&quot; name&#x3D;&quot;senha&quot; id&#x3D;&quot;senha&quot;&gt;
+                        &lt;input (input)&#x3D;&#x27;confirmSenha($event)&#x27; class&#x3D;&quot;form-control&quot; type&#x3D;&quot;password&quot; name&#x3D;&quot;senha&quot; id&#x3D;&quot;senha&quot; placeholder&#x3D;&quot;Senha&quot;&gt;
                     &lt;/div&gt;
 
                     &lt;div class&#x3D;&quot;form-group&quot;&gt;
                         &lt;label for&#x3D;&quot;confirmSenha&quot;&gt;Confirmar Senha&lt;/label&gt;
-                        &lt;input [(ngModel)]&#x3D;&quot;user.senha&quot; class&#x3D;&quot;form-control&quot; type&#x3D;&quot;password&quot; name&#x3D;&quot;confirmSenha&quot; id&#x3D;&quot;confirmSenha&quot;&gt;
+                        &lt;input [(ngModel)]&#x3D;&quot;user.senha&quot; class&#x3D;&quot;form-control&quot; type&#x3D;&quot;password&quot; name&#x3D;&quot;confirmSenha&quot;
+                            id&#x3D;&quot;confirmSenha&quot; placeholder&#x3D;&quot;Repita a senha&quot;&gt;
                     &lt;/div&gt;
 
                     &lt;div class&#x3D;&quot;form-group&quot;&gt;
@@ -671,7 +672,7 @@ export class CadastrarComponent implements OnInit {
 
                     &lt;div class&#x3D;&quot;d-flex justify-content-center mt-5&quot;&gt;
                         &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-outline-danger mr-4&quot; routerLink&#x3D;&quot;/entrar&quot;&gt;Cancelar&lt;/button&gt;
-                        &lt;button  type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-outline-success&quot; (click)&#x3D;&#x27;cadastrar()&#x27;&gt;Cadastrar&lt;/button&gt;
+                        &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-outline-success&quot; (click)&#x3D;&#x27;cadastrar()&#x27;&gt;Cadastrar&lt;/button&gt;
                     &lt;/div&gt;
 
                 &lt;/div&gt;
@@ -680,32 +681,100 @@ export class CadastrarComponent implements OnInit {
 
         &lt;/div&gt;
 
+        &lt;div class&#x3D;&quot;col-md-6 d-flex align-items-center justify-content-center animacao&quot; id&#x3D;&quot;img-bg&quot;&gt;
+        &lt;/div&gt;
+
     &lt;/div&gt;
 
-&lt;/div&gt;
-</code></pre>
+&lt;/div&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
                 <p class="comment">
                     <code>./cadastrar.component.css</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss">#img-bg{
-    background-image: url(&#x27;https://images.hdqwalls.com/download/ninja-hoodie-boy-4k-be-1280x720.jpg&#x27;);
-    min-height: 100vh;
+                <pre class="line-numbers"><code class="language-scss">@import url(&#x27;https://fonts.googleapis.com/css2?family&#x3D;Ubuntu:ital,wght@0,500;0,700;1,400;1,500;1,700&amp;family&#x3D;Zen+Kurenaido&amp;display&#x3D;swap&#x27;);
+
+html, body{
+    font-size: Zen Kurenaido, Arial;
+    width: 100%;
+    height: 100%;
+}
+@keyframes slid {
+    from { 
+        transform: translateY(-50vh);
+    }
+    to { 
+        transform: translateX(0);
+    }
+}
+
+@keyframes slid-linha {
+    from { 
+        transform: translateX(-60vw);
+    }
+    to { 
+        transform: translateX(0);
+    }
+}
+
+#img-bg{
+    background-image: url(&#x27;https://i.imgur.com/xtHeQsI.jpg&#x27;);
+    width: 100vw;
+    height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    font-family: &#x27;Zen Kurenaido&#x27;, sans-serif;
 }
 
-.form-control{
-    border-radius: 10px;
+.background{
+    background-image: linear-gradient(to top, #d5d4d0 0%, #d5d4d0 1%, #eeeeec 31%, #efeeec 75%, #e9e9e7 100%);
+    width: 100vw;
+    height: 100vh;
 }
 
 .quadro{
-    background-color: rgb(255, 255, 255);
+    background-color: transparent;
     padding: 50px;
-    border: 2px solid #e7e7e7;
+    font-family: &#x27;Zen Kurenaido&#x27;, sans-serif;
+    border-radius: 5px 10px 20px 30px;
+
+}
+
+::placeholder{
+    color: rgb(194, 194, 194);
+}
+
+.titulo{
+    animation: slid 2s;
+    color: rgb(255, 255, 255);
+    font-family: &#x27;Zen Kurenaido&#x27;, sans-serif;
+    letter-spacing: 4px;
+    font-size: 55px;
+}
+
+.texto{
+    animation: slid 2s;
+    color: #E7E7E7;
+    font-size: 35px;
+    text-align: center;
+    font-family: &#x27;Zen Kurenaido&#x27;, sans-serif;
+    letter-spacing: 5px;
+}
+
+hr{
+    animation: slid-linha 2s;
+    text-align: left;
+    width: 200px;
+    background-color: white;
+}
+
+button{
+    width: 50%;
+    background-color: transparent;
+    border: transparent;
+    
 }</code></pre>
     </div>
 
@@ -734,7 +803,7 @@ export class CadastrarComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container-fluid">    <div class="row">        <div class="col-md-6 animacao" id="img-bg"></div>        <div class="col-md-6 mt-5 mb-5">            <div class="row d-flex justify-content-center">                <div class="col-md-10 mt-5 quadro">                    <h1 class="text-center mb-5">Cadastro</h1>                    <div class="form-group">                        <label for="nome">Nome</label>                        <input [(ngModel)]=\'user.nome\' class="form-control" type="text" name="nome" id="nome">                    </div>                    <div class="form-group">                        <label for="user">Usuário</label>                        <input [(ngModel)]=\'user.usuario\' class="form-control" type="text" name="user" id="user">                    </div>                    <div class="form-group">                        <label for="foto">Foto</label>                        <input [(ngModel)]=\'user.foto\' class="form-control" type="text" name="foto" id="foto">                    </div>                    <div class="form-group">                        <label for="senha">Senha</label>                        <input (input)=\'confirmSenha($event)\' class="form-control" type="password" name="senha" id="senha">                    </div>                    <div class="form-group">                        <label for="confirmSenha">Confirmar Senha</label>                        <input [(ngModel)]="user.senha" class="form-control" type="password" name="confirmSenha" id="confirmSenha">                    </div>                    <div class="form-group">                        <label for="tipo">Tipo de Usuário</label>                        <select class="form-control" name="tipo" id="tipo" (change)=\'tipoUser($event)\'>                            <option>Selecione</option>                            <option value="normal">Normal</option>                            <option value="adm">Administrador</option>                        </select>                    </div>                    <div class="d-flex justify-content-center mt-5">                        <button type="submit" class="btn btn-outline-danger mr-4" routerLink="/entrar">Cancelar</button>                        <button  type="submit" class="btn btn-outline-success" (click)=\'cadastrar()\'>Cadastrar</button>                    </div>                </div>            </div>        </div>    </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="container-fluid">    <div class="row background">        <div class="col-md-6 mt-5 mb-4">            <div class="row d-flex justify-content-center">                <div class="col-md-9 quadro">                    <h1 class="text-center mb-4">Cadastro</h1>                    <div class="form-group">                        <label for="nome">Nome</label>                        <input [(ngModel)]=\'user.nome\' class="form-control" type="text" name="nome" id="nome" placeholder="Nome">                    </div>                    <div class="form-group">                        <label for="user">E-mail</label>                        <input [(ngModel)]=\'user.usuario\' class="form-control" type="text" name="user" id="user" placeholder="usuario@email.com">                    </div>                    <div class="form-group">                        <label for="foto">Foto</label>                        <input [(ngModel)]=\'user.foto\' class="form-control" type="text" name="foto" id="foto" placeholder="Link da foto">                    </div>                    <div class="form-group">                        <label for="senha">Senha</label>                        <input (input)=\'confirmSenha($event)\' class="form-control" type="password" name="senha" id="senha" placeholder="Senha">                    </div>                    <div class="form-group">                        <label for="confirmSenha">Confirmar Senha</label>                        <input [(ngModel)]="user.senha" class="form-control" type="password" name="confirmSenha"                            id="confirmSenha" placeholder="Repita a senha">                    </div>                    <div class="form-group">                        <label for="tipo">Tipo de Usuário</label>                        <select class="form-control" name="tipo" id="tipo" (change)=\'tipoUser($event)\'>                            <option>Selecione</option>                            <option value="normal">Normal</option>                            <option value="adm">Administrador</option>                        </select>                    </div>                    <div class="d-flex justify-content-center mt-5">                        <button type="submit" class="btn btn-outline-danger mr-4" routerLink="/entrar">Cancelar</button>                        <button type="submit" class="btn btn-outline-success" (click)=\'cadastrar()\'>Cadastrar</button>                    </div>                </div>            </div>        </div>        <div class="col-md-6 d-flex align-items-center justify-content-center animacao" id="img-bg">        </div>    </div></div></div>'
     var COMPONENTS = [{'name': 'AlertasComponent', 'selector': 'app-alertas'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CadastrarComponent', 'selector': 'app-cadastrar'},{'name': 'EntrarComponent', 'selector': 'app-entrar'},{'name': 'InicioComponent', 'selector': 'app-inicio'},{'name': 'MenuComponent', 'selector': 'app-menu'},{'name': 'PostagemDeleteComponent', 'selector': 'app-postagem-delete'},{'name': 'PostagemEditComponent', 'selector': 'app-postagem-edit'},{'name': 'RodapeComponent', 'selector': 'app-rodape'},{'name': 'TemaComponent', 'selector': 'app-tema'},{'name': 'TemaDeleteComponent', 'selector': 'app-tema-delete'},{'name': 'TemaEditComponent', 'selector': 'app-tema-edit'},{'name': 'UserEditComponent', 'selector': 'app-user-edit'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'CadastrarComponent'};
@@ -750,14 +819,14 @@ export class CadastrarComponent implements OnInit {
 
 
 
-                   
+
 
 
 
 
                    </div><div class="search-results">
     <div class="has-results">
-        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
         <ul class="search-results-list"></ul>
     </div>
     <div class="no-results">
@@ -778,8 +847,8 @@ export class CadastrarComponent implements OnInit {
 
        <script src="../js/libs/custom-elements.min.js"></script>
        <script src="../js/libs/lit-html.js"></script>
-       
-       <script type="module" src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/menu-wc.js" defer></script>
        <script nomodule src="../js/menu-wc_es5.js" defer></script>
 
        <script src="../js/libs/bootstrap-native.js"></script>
