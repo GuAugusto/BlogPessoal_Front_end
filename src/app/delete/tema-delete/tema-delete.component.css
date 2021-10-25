@@ -1,0 +1,16 @@
+.container{
+    width: 100vw;
+    height: 52vh;
+}
+
+h1{
+    color: black;
+}
+
+.mt-150{
+    margin-top: 150px;
+}
+
+button{
+    width: 30%;
+}

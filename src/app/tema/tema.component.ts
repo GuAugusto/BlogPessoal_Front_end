@@ -1,6 +1,9 @@
-import { Router } from '@angular/router';
-import { environment } from './../../environments/environment.prod';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment.prod';
+import { Tema } from '../model/Tema';
+import { AlertasService } from '../service/alertas.service';
+import { TemaService } from '../service/tema.service';
 
 @Component({
   selector: 'app-tema',
@@ -9,14 +12,41 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TemaComponent implements OnInit {
 
+  tema: Tema = new Tema()
+  listaTemas: Tema[]
+
   constructor(
-    private router: Router
+    private router: Router,
+    private temaService: TemaService,
+    private alertas: AlertasService
   ) { }
 
-  ngOnInit() {
+  ngOnInit(){
     if(environment.token == ''){
       this.router.navigate(['/entrar'])
     }
+
+    if(environment.tipo != 'adm'){
+      this.alertas.showAlertInfo('Necessário acesso de administrador para incluir um tema!')
+      this.router.navigate(['/inicio'])
+    }
+
+    this.findAllTemas() //Ao iniciar a pagina Temas irá listar todos os temas automaticamente
+  }
+
+  findAllTemas(){
+    this.temaService.getAllTema().subscribe((resp: Tema[])=>{
+      this.listaTemas = resp
+    })
+  }
+  
+  cadastrar(){
+    this.temaService.postTema(this.tema).subscribe((resp: Tema)=>{
+      this.tema = resp
+      this.alertas.showAlertSuccess('Tema cadastrado com sucesso!')
+      this.findAllTemas() // Após cadastrar um Tema irá listar na pagina os Temas
+      this.tema = new Tema() // cria um novo objeto tema zerado
+    })
   }
 
 }

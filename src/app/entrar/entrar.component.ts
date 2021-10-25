@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { UserLogin } from '../model/UserLogin';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 
 @Component({
@@ -15,7 +16,8 @@ export class EntrarComponent implements OnInit {
 
   constructor(
     private auth: AuthService, //Injeção de dependencias
-    private router: Router
+    private router: Router,
+    private alertas: AlertasService
 
   ) { }
 
@@ -32,6 +34,7 @@ export class EntrarComponent implements OnInit {
       environment.nome = this.userLogin.nome
       environment.foto = this.userLogin.foto
       environment.id = this.userLogin.id
+      environment.tipo = this.userLogin.tipo
 
       //Mostrando no console para verificar se realmente foi atribuido na variavel os atributos
       console.log(environment.token)
@@ -41,7 +44,7 @@ export class EntrarComponent implements OnInit {
       this.router.navigate(['/inicio'])
     }, erro => {
       if(erro.status == 500){
-        alert('Usuario ou senha está incorreto!')
+        this.alertas.showAlertDanger('Usuario ou senha está incorreto!')
       }
     })
   }

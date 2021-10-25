@@ -1,7 +1,21 @@
 .fs-54{
-  font-size: 54pt;
+    font-size: 54pt;
 }
 
 .fs-18{
-  font-size: 18pt;
+    font-size: 18pt;
+}
+
+.fundo-bg{
+    background-color: #f1f1f1;
+}
+
+.card-columns{
+    display:inline;
+    border-radius: 20%;
+}
+
+.card{
+    border-radius: 30px;
+    padding: 0;
 }

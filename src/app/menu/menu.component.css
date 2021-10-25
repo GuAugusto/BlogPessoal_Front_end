@@ -1,7 +1,11 @@
 .fs-16{
     font-size: 16pt;
-  }
-  
-  a{
+}
+
+a{
     cursor: pointer;
-  }
+}
+
+.fundo-bg{
+    background: rgb(0, 0, 0);
+}
