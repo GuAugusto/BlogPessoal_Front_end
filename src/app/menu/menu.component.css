@@ -1,11 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,500;0,700;1,400;1,500;1,700&family=Zen+Kurenaido&display=swap');
+
 .fs-16{
     font-size: 16pt;
+    font-family: 'Zen Kurenaido', sans-serif;
 }
 
 a{
     cursor: pointer;
+    font-family: 'Zen Kurenaido', sans-serif;
 }
 
 .fundo-bg{
     background: rgb(0, 0, 0);
+    font-family: 'Zen Kurenaido', sans-serif;
 }
